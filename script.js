@@ -1,20 +1,18 @@
 const yesButton = document.getElementById("yes");
 const noButton = document.getElementById("no");
-const response = document.getElementById("response");
-const hiddenMessage = document.getElementById("hidden-message");
 const meow = document.getElementById("meow");
 
 yesButton.addEventListener("click", () => {
+  // Play meow sound
   meow.play();
 
+  // Redirect to second page after sound
   setTimeout(() => {
     window.location.href = "yes.html";
   }, 800);
 });
 
-  hiddenMessage.style.display = "block";
-});
-
+// Make the "No" button run away
 noButton.addEventListener("mouseover", () => {
   noButton.style.position = "absolute";
   noButton.style.left = Math.random() * 80 + "%";
