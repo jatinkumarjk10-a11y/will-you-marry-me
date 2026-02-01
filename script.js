@@ -5,16 +5,18 @@ const meow = document.getElementById("meow");
 /* 🌸 Flower burst animation */
 function flowerBurst() {
   const container = document.getElementById("flowers");
+  if (!container) return;
+
   const flowers = ["🌸", "🌺", "💐", "🌷", "🌼"];
 
-  for (let i = 0; i < 25; i++) {
+  for (let i = 0; i < 30; i++) {
     const flower = document.createElement("span");
     flower.className = "flower";
     flower.textContent =
       flowers[Math.floor(Math.random() * flowers.length)];
 
     flower.style.left = Math.random() * 100 + "vw";
-    flower.style.top = "80vh";
+    flower.style.bottom = "0";
     flower.style.animationDelay = Math.random() * 0.4 + "s";
 
     container.appendChild(flower);
@@ -24,13 +26,9 @@ function flowerBurst() {
 }
 
 yesButton.addEventListener("click", () => {
-  // 🌸 Start flowers
-  flowerBurst();
+  flowerBurst();   // 🌸
+  meow.play();     // 🔊
 
-  // 🔊 Play meow sound
-  meow.play();
-
-  // ⏳ Redirect to second page after animation + sound
   setTimeout(() => {
     window.location.href = "yes.html";
   }, 900);
