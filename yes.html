@@ -38,5 +38,35 @@
     </p>
   </div>
 
+  <!-- 🎶 Background music -->
+  <audio id="bg-music" src="music.mp3" loop></audio>
+
+<script>
+  const music = document.getElementById("bg-music");
+  music.volume = 0;
+  music.loop = true;
+
+  function fadeIn() {
+    let vol = 0;
+    const fade = setInterval(() => {
+      if (vol < 0.6) {
+        vol += 0.02;
+        music.volume = vol;
+      } else {
+        clearInterval(fade);
+      }
+    }, 120);
+  }
+
+  setTimeout(() => {
+    music.play().then(fadeIn).catch(() => {
+      document.body.addEventListener("click", () => {
+        music.play();
+        fadeIn();
+      }, { once: true });
+    });
+  }, 400);
+</script>
+
 </body>
 </html>
