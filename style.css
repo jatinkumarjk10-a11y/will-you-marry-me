@@ -104,3 +104,55 @@ h1 {
 .cat {
   animation: bounce 1.2s infinite;
 }
+/* Celebration GIF */
+.celebration-gif {
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  animation: popIn 0.9s ease-out forwards;
+}
+
+/* Entrance animation */
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.6) translateY(20px);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.05) translateY(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/* Flower burst layer */
+#flowers {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.flower {
+  position: absolute;
+  font-size: 26px;
+  animation: flowerFloat 2.8s ease-out forwards;
+}
+
+@keyframes flowerFloat {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.6);
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-320px) scale(1.2);
+  }
+}
