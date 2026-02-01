@@ -34,14 +34,40 @@ h1 {
 }
 
 .cat {
-  font-size: 70px;
-  animation: bounce 1.5s infinite;
-  margin: 10px 0;
+  margin: 16px 0;
 }
 
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+/* Intro GIF (first page) */
+.intro-gif {
+  width: 120px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Celebration GIF (second page) */
+.celebration-gif {
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  animation: popIn 0.9s ease-out forwards;
+}
+
+/* Entrance animation */
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.6) translateY(20px);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .question {
@@ -67,17 +93,8 @@ h1 {
   background: #ddd;
 }
 
-#response {
-  margin-top: 20px;
-  font-size: 1.1em;
-  color: #ff5fa2;
-}
-
 .hidden {
   display: none;
-  margin-top: 15px;
-  font-size: 1em;
-  color: #ff5fa2;
 }
 
 /* Floating Hearts */
@@ -96,39 +113,7 @@ h1 {
   100% { transform: translateY(-100vh); }
 }
 
-/* Mobile tweaks */
-@media (max-width: 480px) {
-  h1 { font-size: 1.8em; }
-  .question { font-size: 1.3em; }
-}
-.cat {
-  animation: bounce 1.2s infinite;
-}
-/* Celebration GIF */
-.celebration-gif {
-  width: 220px;
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 20px auto;
-  animation: popIn 0.9s ease-out forwards;
-}
-
-/* Entrance animation */
-@keyframes popIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.6) translateY(20px);
-  }
-  70% {
-    opacity: 1;
-    transform: scale(1.05) translateY(0);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-/* Flower burst layer */
+/* 🌸 Flower burst */
 #flowers {
   position: fixed;
   inset: 0;
@@ -146,7 +131,7 @@ h1 {
 @keyframes flowerFloat {
   0% {
     opacity: 0;
-    transform: translateY(20px) scale(0.6);
+    transform: translateY(0) scale(0.6);
   }
   20% {
     opacity: 1;
@@ -155,4 +140,10 @@ h1 {
     opacity: 0;
     transform: translateY(-320px) scale(1.2);
   }
+}
+
+/* Mobile tweaks */
+@media (max-width: 480px) {
+  h1 { font-size: 1.8em; }
+  .question { font-size: 1.3em; }
 }
