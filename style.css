@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #ffd6e8, #fff);
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  max-width: 90%;
+  width: 360px;
+  text-align: center;
+  z-index: 2;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+.subtitle {
+  color: #555;
+  font-size: 0.95em;
+}
+
+.cat {
+  font-size: 70px;
+  animation: bounce 1.5s infinite;
+  margin: 10px 0;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.question {
+  font-size: 1.4em;
+  margin: 20px 0;
+}
+
+.buttons button {
+  padding: 12px 22px;
+  margin: 10px;
+  font-size: 1em;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+#yes {
+  background: #ff5fa2;
+  color: white;
+}
+
+#no {
+  background: #ddd;
+}
+
+#response {
+  margin-top: 20px;
+  font-size: 1.1em;
+  color: #ff5fa2;
+}
+
+.hidden {
+  display: none;
+  margin-top: 15px;
+  font-size: 1em;
+  color: #ff5fa2;
+}
+
+/* Floating Hearts */
+.hearts::before {
+  content: "💖 💕 💗 💓 💞";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: float 12s linear infinite;
+  font-size: 24px;
+  opacity: 0.6;
+}
+
+@keyframes float {
+  0% { transform: translateY(100vh); }
+  100% { transform: translateY(-100vh); }
+}
+
+/* Mobile tweaks */
+@media (max-width: 480px) {
+  h1 { font-size: 1.8em; }
+  .question { font-size: 1.3em; }
+}
+.cat {
+  animation: bounce 1.2s infinite;
+}
