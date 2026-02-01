@@ -147,3 +147,38 @@ h1 {
   h1 { font-size: 1.8em; }
   .question { font-size: 1.3em; }
 }
+
+.celebration-text {
+  font-size: 1.4em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #ff5fa2;
+  margin-top: 10px;
+}
+
+.love-equation {
+  font-size: 1.05em;
+  margin: 18px 0;
+  line-height: 1.6;
+  color: #444;
+}
+
+.love-equation span,
+.love-equation .equals {
+  color: #ff5fa2;
+  font-weight: 600;
+}
+
+.promise {
+  font-size: 0.95em;
+  color: #666;
+  margin-top: 20px;
+  line-height: 1.6;
+}
+
+.promise span {
+  display: block;
+  margin-top: 6px;
+  font-weight: 600;
+  color: #ff5fa2;
+}
